@@ -1,9 +1,17 @@
-import React from 'react'
+import React, { useState } from 'react'
 import {Link} from "react-scroll"
 import {FaUser, FaShoppingCart} from "react-icons/fa"
+// import {AiOUtLineClose} from "react-icons/ai"
+// import {RiMenu2Line} from "react-icons/ri"
 
 
 const Navbar = () => {
+
+  const [Menu, setMenu] =useState(false);
+
+  // const handleChange = () => {
+  //   setMenu(!Menu);
+  // };
   return (
     <header>
         <section>
@@ -25,17 +33,24 @@ const Navbar = () => {
           <div className='flex items-center gap-5'>
             <FaUser  size={25} className='text-DarkColor'/>
             <div className='text-DarkColor relative'>
-            <FaShoppingCart size={25} className=''/>
-            <div className='absolute top-[-17px] right-[-10px] '>
-0
+            <FaShoppingCart size={25} className='cursor-pointer'/>
+            <div className='absolute top-[-15px] right-[-10px] bg-red-600 w-[20px] h-[20px] rounded-full text-white text-sm grid place-items-center  '>
+1
             </div>
             </div>
-
-          </div>
+          
+          </div> 
+          {/* menu icons  */}
+          {/* <div>
+            {menu ? (
+              <AiOUtLineClose size={28} onClick={handleChange}  /> 
+            ) : ( <RiMenu2Line size={28}  onClick={handleChange} />
+          )}
+          </div> */}
           </div>
         </section>
     </header>
-  )
-}
+  );
+};
 
 export default Navbar
